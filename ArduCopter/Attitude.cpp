@@ -147,7 +147,7 @@ void Copter::set_accel_throttle_I_from_pilot_throttle()
 // rotate vector from vehicle's perspective to North-East frame
 void Copter::rotate_body_frame_to_NE(float &x, float &y)
 {
-    float ne_x = x*ahrs.cos_yaw() - x*ahrs.sin_yaw();
+    float ne_x = x*ahrs.cos_yaw() - y*ahrs.sin_yaw();
     float ne_y = x*ahrs.sin_yaw() + y*ahrs.cos_yaw();
     x = ne_x;
     y = ne_y;
